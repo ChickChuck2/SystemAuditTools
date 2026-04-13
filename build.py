@@ -12,6 +12,7 @@ Saída: dist/Sentinel_Audit.exe
 import os
 import re
 import sys
+import io
 import time
 import shutil
 import subprocess
@@ -68,6 +69,10 @@ def render_progress(percent: int, stage: str = ""):
 
 
 def build():
+    # Garantir que a saída do console suporte caracteres Unicode
+    if sys.stdout.encoding.lower() != 'utf-8':
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
     script_dir = os.path.dirname(os.path.abspath(__file__))
     os.chdir(script_dir)
 
@@ -87,8 +92,14 @@ def build():
         if os.path.exists(src):
             add_data += [f"--add-data={src};{dest}"]
 
+    excludes = [
+        "tkinter", "tcl", "tk", "unittest", "pydoc", "email",
+        "pydoc_data", "xml", "socketserver", "multiprocessing",
+        "sqlite3", "test"
+    ]
+
     cmd = [
-        sys.executable, "-m", "PyInstaller",
+        sys.executable, "-O", "-m", "PyInstaller",
         f"--name={APP_NAME}",
         "--onefile",
         "--windowed",
@@ -96,6 +107,7 @@ def build():
         "--noconfirm",
         "--clean",
         "--icon=icon.ico",
+        *[f"--exclude-module={m}" for m in excludes],
         *add_data,
         SOURCE_SCRIPT,
     ]
