@@ -31,6 +31,7 @@ VERSION        = "2.0.0"
 SOURCE_SCRIPT  = "main.py"
 EXTRA_DATA     = [
     ("sentinel.css", "."),
+    ("icon.png", "."),
 ]
 # ──────────────────────────────────────────────────────────────────────────────
 
@@ -94,6 +95,7 @@ def build():
         "--noconsole",
         "--noconfirm",
         "--clean",
+        "--icon=icon.ico",
         *add_data,
         SOURCE_SCRIPT,
     ]

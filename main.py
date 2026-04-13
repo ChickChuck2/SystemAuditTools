@@ -49,25 +49,29 @@ class HubApi:
     def open_autorun(self):
         webview.create_window(
             "Sentinel — Autorun", html=AUTORUN_HTML,
-            js_api=AutorunApi(), width=1300, height=850, background_color="#030305"
+            js_api=AutorunApi(), width=1300, height=850,
+            background_color="#030305"
         )
 
     def open_network(self):
         webview.create_window(
             "Sentinel — Network Pulse", html=NETWORK_HTML,
-            js_api=NetworkApi(), width=1400, height=850, background_color="#030305"
+            js_api=NetworkApi(), width=1400, height=850,
+            background_color="#030305"
         )
 
     def open_tasks(self):
         webview.create_window(
             "Sentinel — TaskGuard", html=TASKS_HTML,
-            js_api=TasksApi(), width=1300, height=850, background_color="#030305"
+            js_api=TasksApi(), width=1300, height=850,
+            background_color="#030305"
         )
 
     def open_dns(self):
         webview.create_window(
             "Sentinel — Shield DNS", html=DNS_HTML,
-            js_api=DnsApi(), width=1300, height=850, background_color="#030305"
+            js_api=DnsApi(), width=1300, height=850,
+            background_color="#030305"
         )
 
     # --- Relatório Master ---
@@ -421,8 +425,8 @@ if __name__ == "__main__":
             js_api=api,
             width=1100, height=780,
             background_color="#020204",
-            min_size=(900, 650),
+            min_size=(900, 650)
         )
-        webview.start()
+        webview.start(icon='icon.png')
     except Exception:
         show_error_popup(traceback.format_exc(), "Sentinel — Erro Crítico")
