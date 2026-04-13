@@ -9,6 +9,7 @@
 ```
 SystemAuditTools/
 │
+├── main.py                  # ← Entry point principal (Hub)
 ├── build.py                 # Builder PyInstaller → gera .exe
 ├── requirements.txt         # Dependências do projeto
 ├── icon.png                 # Ícone da aplicação (janela)
@@ -89,18 +90,17 @@ Gera `dist/Sentinel_Audit.exe` — um único executável portátil, sem necessid
 
 ---
 
----
-
 ## 🔒 Segurança
 
-- A chave mestra de acesso remoto (`master_key.txt`) é gerada automaticamente com 64 caracteres hexadecimais (256-bit entropy).
-- **Nunca commite** o arquivo `master_key.txt` no Git — ele está no `.gitignore`.
-- O servidor de acesso remoto deve ser usado apenas em redes confiáveis ou com VPN.
+- O Sentinel Audit Suite deve ser executado com privilégios de Administrador para acessar registros do sistema e tarefas agendadas.
+- Todos os relatórios são salvos localmente na pasta `reports/`.
 
 ---
 
 ## 📋 Dependências
 
+| Pacote | Versão | Finalidade |
+|--------|--------|------------|
 | `pywebview` | 6.1 | Interface GUI via WebView2 |
 | `Pillow` | 12.0.0 | Manipulação e conversão de ícones |
 | `pyinstaller` | 6.18.x | Compilação do executável |
