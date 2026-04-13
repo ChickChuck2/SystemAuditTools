@@ -31,12 +31,6 @@ SystemAuditTools/
 │   ├── tasks_module.py      # API + HTML — TaskGuard
 │   └── dns_module.py        # API + HTML — Shield DNS & Hosts
 │
-├── remote-access/           # Sistema de acesso remoto reverso
-│   ├── listener.py          # Servidor central (roda em casa)
-│   ├── agent.py             # Agente reverso (roda no trabalho/cliente)
-│   ├── client.py            # Shell interativo para controlar agentes
-│   └── README.md
-│
 ├── reports/                 # Relatórios gerados (auto-criado)
 ├── build/                   # Artefatos de build (gitignored)
 └── dist/                    # Executável final (gitignored)
@@ -94,10 +88,6 @@ python build.py
 Gera `dist/Sentinel_Audit.exe` — um único executável portátil, sem necessidade de Python instalado.
 
 ---
-
-## 🌐 Remote Access
-
-Veja [`remote-access/README.md`](remote-access/README.md) para instruções.
 
 ---
 
