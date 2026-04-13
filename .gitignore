@@ -21,8 +21,6 @@ env/
 master_key.txt
 last_ip.txt
 *.key
-remote-access/master_key.txt
-remote-access/last_ip.txt
 
 # ─── Relatórios e Temporários ─────────────────────────────────────────────────
 reports/

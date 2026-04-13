@@ -159,7 +159,7 @@ def build():
         for err_line in full_log[-15:]:
             print(f"    {Fore.RED}> {Fore.WHITE}{err_line}")
 
-    input(f"\n{Fore.DIM}  Pressione Enter para sair...{Style.RESET_ALL}")
+    input(f"\n{Style.DIM}  Pressione Enter para sair...{Style.RESET_ALL}")
 
 
 if __name__ == "__main__":
