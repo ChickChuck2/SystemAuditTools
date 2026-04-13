@@ -15,16 +15,27 @@ venv/
 .venv/
 env/
 .env/
+.env
 
 # ─── Segurança — NUNCA commitar ───────────────────────────────────────────────
 master_key.txt
 last_ip.txt
+*.key
 remote-access/master_key.txt
 remote-access/last_ip.txt
 
-# ─── Relatórios (dados sensíveis) ─────────────────────────────────────────────
+# ─── Relatórios e Temporários ─────────────────────────────────────────────────
 reports/
 *.bak
+*.tmp
+temp/
+
+# ─── Testes e Qualidade ───────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.tox/
 
 # ─── IDEs e SO ────────────────────────────────────────────────────────────────
 .vscode/
@@ -36,3 +47,4 @@ Desktop.ini
 
 # ─── Logs ─────────────────────────────────────────────────────────────────────
 *.log
+webview_debug.log
