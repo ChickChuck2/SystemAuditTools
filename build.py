@@ -93,8 +93,8 @@ def build():
             add_data += [f"--add-data={src};{dest}"]
 
     excludes = [
-        "tkinter", "tcl", "tk", "unittest", "pydoc", "email",
-        "pydoc_data", "xml", "socketserver", "multiprocessing",
+        "tkinter", "tcl", "tk", "unittest", "pydoc",
+        "pydoc_data", "multiprocessing",
         "sqlite3", "test"
     ]
 
