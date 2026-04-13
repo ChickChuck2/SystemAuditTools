@@ -9,8 +9,10 @@
 ```
 SystemAuditTools/
 │
-├── main.py                  # ← Entry point principal (Hub)
 ├── build.py                 # Builder PyInstaller → gera .exe
+├── requirements.txt         # Dependências do projeto
+├── icon.png                 # Ícone da aplicação (janela)
+├── icon.ico                 # Ícone do executável (Windows)
 ├── sentinel.css             # (legado — mantido para referência)
 │
 ├── core/                    # Componentes compartilhados
@@ -53,12 +55,7 @@ SystemAuditTools/
 ### Instalar dependências
 
 ```bash
-pip install pywebview
-```
-
-Para o builder:
-```bash
-pip install pyinstaller colorama
+pip install -r requirements.txt
 ```
 
 ---
@@ -114,10 +111,9 @@ Veja [`remote-access/README.md`](remote-access/README.md) para instruções.
 
 ## 📋 Dependências
 
-| Pacote | Versão mínima | Finalidade |
-|--------|--------------|-----------|
-| `pywebview` | 4.x | Interface GUI via WebView2 |
-| `pyinstaller` | 6.x | Compilação do executável |
-| `colorama` | - | Saída colorida no builder |
+| `pywebview` | 6.1 | Interface GUI via WebView2 |
+| `Pillow` | 12.0.0 | Manipulação e conversão de ícones |
+| `pyinstaller` | 6.18.x | Compilação do executável |
+| `colorama` | 0.4.6 | Saída colorida no builder |
 
 > Todas as funcionalidades de auditoria usam apenas a stdlib do Python + WinAPI via `ctypes`.
